@@ -1,0 +1,218 @@
+:root{
+    --primary-color: #003699;
+  --dark-color: #333333;
+  --light-color: #f4f4f4;
+  --lose-color: #dc3545;
+  --filled-color: #e97f89;
+  --win-color: #28a745;
+    
+}
+
+*,*::before,*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family:monospace;
+    color: var(--dark-color);
+}
+
+.container{
+    text-align: center;
+    max-width: 800px;
+    width: 95%;
+    padding: 0 2rem;
+    margin: 4rem auto;
+}
+@media(max-width:400px){
+    .container{
+        padding: 0 1rem;
+    }
+}
+.container h1{
+    font-size: clamp(2rem,6vw,3rem);
+    margin-bottom: 2rem;
+}
+.container h1 span{
+    color: var(--primary-color);
+}
+.fa-th{
+    color: var(--primary-color);
+}
+
+.btn{
+    display: none;
+    padding:0.5rem 3rem;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    transition: 0.3s;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.btn:hover{
+        color: var(--light-color);
+        background-color: var(--primary-color);
+}
+.players{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    color: #fff;
+}
+.players p{
+    background: var(--dark-color);
+    padding: 0.25rem 0;
+}
+.players i{
+    margin-left: 0.5rem;
+}
+.active-player{
+    background: var(--win-color) !important;
+}
+
+
+.grid-area{
+    display: grid;
+    max-width: 315px;
+    max-height: 315px;
+    transform: translateY(-6px);
+    margin: 2rem auto;
+    grid-template-columns: repeat(3,100px);
+    grid-template-rows: repeat(3,100px);
+    gap: 0.5rem;
+    background: black;
+    text-align: center;
+
+}
+
+.box{
+    background: #fff;
+    padding: 2rem;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.box:hover{
+    background: var(--light-color);
+}
+@media(min-width:800px){
+
+    .filled:hover{
+        background: var(--filled-color);
+    }
+}
+
+
+/* modal */
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0,0,0,0.5);
+}
+
+.modal-content{
+     background: white;
+  text-align: center;
+  margin: 5rem auto;
+  width: 300px;
+  border-radius: 10px;
+  padding: 3rem;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.3),
+   0 7px 20px 0 rgba(0, 0, 0, 0.6);
+   animation: modalopen 1s;
+}
+@keyframes modalopen{
+    from{
+        transform: scale(0);
+    }
+    50%{
+        transform: scale(1.25);
+    }
+}
+.modal-content h2{
+    color: var(--win-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+#modalBtn{
+    margin-top: 1rem;
+    display: inline-block;
+}
+
+/* eror message */
+
+.error{
+    background: var(--lose-color);
+    width: 400px;
+    /* margin: 1.5rem auto; */
+    padding: 1rem;
+    font-size: 1.2rem;
+    color: #fff;
+    display: inline-block;
+    position: absolute;
+    top: 16rem;
+    left: 50%;
+    z-index: 2;
+    transform: translateX(-50%);
+}
+
+/* instruction modal */
+
+#instructBtn{
+    display: inline-block;
+}
+
+.modal-instructions{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0,0,0,0.5);
+}
+.modal-instructions-content{
+     background: white;
+  text-align: center;
+  margin: 5rem auto;
+  width: 300px;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.3),
+   0 7px 20px 0 rgba(0, 0, 0, 0.6);
+   /* animation: modalopen 1s; */
+}
+
+.modal-instructions-content h2{
+    margin-bottom: 2rem;
+}
+.modal-instructions-content .fa-th{
+    margin-bottom: 2rem;
+}
+.modal-instructions-content li{
+    font-size: 1rem;
+    list-style-type: none;
+    padding-bottom: 1rem;
+}
+.modal-instructions-content li:first-child{
+    color: var(--win-color);
+}
+.modal-instructions-content p{
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+/* change turn */

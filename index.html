@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicTacToe</title>
+    <link rel="stylesheet" href="./style.css">
+     <script
+      src="https://kit.fontawesome.com/15a58f88dc.js"
+      crossorigin="anonymous"
+    ></script>
+</head>
+<body>
+    <div class="container">
+        <h1> <i class="fas fa-th"></i>  Tic<span>Tac</span>Toe</h1>
+            <div class="players">
+                <p class="active-player player">Player 1   <i class="fa fa-times"></i></p>
+                <p class="player">Player 2  <i class="fa fa-circle-o"></i></p>
+            </div>
+        <div class="grid-area">
+            <div class="box" ></div>
+            <div class="box" ></div>
+            <div class="box" ></div>
+            <div class="box" ></div>
+            <div class="box" ></div>
+            <div class="box" ></div>
+            <div class="box" ></div>
+            <div class="box" ></div>
+            <div class="box" ></div>
+        </div>
+        <button id="restart" class="btn">Restart</button>
+    </div>
+
+
+    <!-- modal -->
+    <div class="modal">
+        <div id="result" class="modal-content">
+            <h2>Player One Won!</h2>
+            <i class="fas fa-handshake fa-8x"></i>
+            <button class="btn" id="modalBtn">Play Again</button>
+        </div>
+    </div>
+    <div class="modal-instructions">
+        <div class="modal-instructions-content">
+            <h2>Welcome to TicTacToe!</h2>
+            <i class="fas fa-th fa-7x"></i>
+            <ul>
+                <li>Green represents the active player</li>
+                <li><i class="fas fa-times fa-2x"></i> gets the first turn</li>
+            </ul>
+            <p>Enjoy!</p>
+            <button class="btn" id="instructBtn">Start Game</button>
+        </div>
+    </div>
+
+    
+</body>
+<script src="./app.js"></script>
+</html>
